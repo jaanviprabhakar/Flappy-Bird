@@ -12,6 +12,11 @@ namespace Flappy_Bird
 {
     public partial class Form1 : Form
     {
+        //variables
+        int pipeSpeed = 8;
+        int gravity = 5;
+        int score = 0;
+
         public Form1()
         {
             InitializeComponent();
