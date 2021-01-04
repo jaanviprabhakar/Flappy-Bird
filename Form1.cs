@@ -14,7 +14,7 @@ namespace Flappy_Bird
     {
         //variables
         int pipeSpeed = 8;
-        int gravity = 5;
+        int gravity = 10;
         int score = 0;
 
         public Form1()
@@ -25,13 +25,25 @@ namespace Flappy_Bird
         private void gameTimerEvent(object sender, EventArgs e)
         {
             flappyBird.Top += gravity; //add gravity
+            pipeBottom.Left -= pipeSpeed;
+            pipeTop.Left -= pipeSpeed;
+
+            if(pipeBottom.Left < -50)
+            {
+                pipeBottom.Left = 800; // for bottom pipe to re- occur
+            }
+
+            if(pipeTop.Left < -80)
+            {
+                pipeTop.Left = 950; // for top pipe to reoccur
+            }
         }
 
         private void gamekeyisdown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Space)
             {
-                gravity = -5; // when spacebar is pressed change gravity to -5 for bird to go up
+                gravity = -10; // when spacebar is pressed change gravity to -5 for bird to go up
             }
 
         }
@@ -40,7 +52,7 @@ namespace Flappy_Bird
         {
             if(e.KeyCode == Keys.Space)
             {
-                gravity = 5; //when spacebar is released change it back to 5 for bird to come down
+                gravity = 10; //when spacebar is released change it back to 5 for bird to come down
             }
 
         }
