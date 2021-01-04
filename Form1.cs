@@ -24,16 +24,24 @@ namespace Flappy_Bird
 
         private void gameTimerEvent(object sender, EventArgs e)
         {
-
+            flappyBird.Top += gravity; //add gravity
         }
 
         private void gamekeyisdown(object sender, KeyEventArgs e)
         {
+            if(e.KeyCode == Keys.Space)
+            {
+                gravity = -5; // when spacebar is pressed change gravity to -5 for bird to go up
+            }
 
         }
 
         private void gamekeyisup(object sender, KeyEventArgs e)
         {
+            if(e.KeyCode == Keys.Space)
+            {
+                gravity = 5; //when spacebar is released change it back to 5 for bird to come down
+            }
 
         }
     }
