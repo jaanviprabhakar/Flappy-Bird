@@ -29,12 +29,14 @@ namespace Flappy_Bird
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pipeTop = new System.Windows.Forms.PictureBox();
             this.pipeBottom = new System.Windows.Forms.PictureBox();
             this.flappyBird = new System.Windows.Forms.PictureBox();
             this.ground = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
@@ -54,9 +56,9 @@ namespace Flappy_Bird
             // pipeBottom
             // 
             this.pipeBottom.Image = ((System.Drawing.Image)(resources.GetObject("pipeBottom.Image")));
-            this.pipeBottom.Location = new System.Drawing.Point(286, 315);
+            this.pipeBottom.Location = new System.Drawing.Point(286, 294);
             this.pipeBottom.Name = "pipeBottom";
-            this.pipeBottom.Size = new System.Drawing.Size(63, 219);
+            this.pipeBottom.Size = new System.Drawing.Size(63, 240);
             this.pipeBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pipeBottom.TabIndex = 1;
             this.pipeBottom.TabStop = false;
@@ -92,6 +94,11 @@ namespace Flappy_Bird
             this.label1.TabIndex = 4;
             this.label1.Text = "Score: 0";
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 20;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +112,8 @@ namespace Flappy_Bird
             this.Controls.Add(this.pipeBottom);
             this.Name = "Form1";
             this.Text = "Flappy Bird";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gamekeyisup);
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
@@ -121,6 +130,7 @@ namespace Flappy_Bird
         private System.Windows.Forms.PictureBox flappyBird;
         private System.Windows.Forms.PictureBox ground;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
 

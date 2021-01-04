@@ -16,5 +16,20 @@ namespace Flappy_Bird
         {
             InitializeComponent();
         }
+
+        private void gameTimerEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gamekeyisdown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void gamekeyisup(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
