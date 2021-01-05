@@ -14,7 +14,7 @@ namespace Flappy_Bird
     {
         //variables
         int pipeSpeed = 5; //default pipe speed
-        int gravity = 5; //default gravity spped
+        int gravity = 8; //default gravity spped
         int score = 0; //default score set to 0
 
         public Form1()
@@ -44,17 +44,40 @@ namespace Flappy_Bird
 
 
             //if the bird hits the ground or touches pipes
-            if (flappyBird.Bounds.IntersectsWith(pipeBottom.Bounds) || flappyBird.Bounds.IntersectsWith(pipeTop.Bounds) || flappyBird.Bounds.IntersectsWith(ground.Bounds)|| flappyBird.Top< -20)
+            if (flappyBird.Bounds.IntersectsWith(pipeBottom.Bounds) || flappyBird.Bounds.IntersectsWith(pipeTop.Bounds) || flappyBird.Bounds.IntersectsWith(ground.Bounds)|| flappyBird.Top< -40)
             {
                 endGame(); //if any condition is met, endgame() fn will run
             }
+
+           if(score > 5)
+            {
+                pipeSpeed = 8;
+            }
+            if(score > 15)
+            {
+                pipeSpeed = 14;
+            }
+
+            if(score > 30)
+            {
+                pipeSpeed = 20;
+            }
+           
         }
 
         private void gamekeyisdown(object sender, KeyEventArgs e)
         { // game key is down event linked to main form
             if (e.KeyCode == Keys.Space)
             {
-                gravity = -5; // when spacebar is pressed change gravity to -5 for bird to go up
+                if(score <= 5)
+                {
+                    gravity = -5; // when spacebar is pressed change gravity to -5 for bird to go up
+                }
+                if(score > 5)
+                {
+                    gravity = -8;
+                }
+                
             }
 
         }
@@ -63,7 +86,15 @@ namespace Flappy_Bird
         { // game key is up event linked to main form
             if(e.KeyCode == Keys.Space)
             {
-                gravity = 5; //when spacebar is released change it back to 5 for bird to come down
+                if (score <= 5)
+                {
+                    gravity = 5; //when spacebar is released change it back to 5 for bird to come down
+                }
+
+                if (score > 5)
+                {
+                    gravity = 8;
+                }
             }
 
         }
