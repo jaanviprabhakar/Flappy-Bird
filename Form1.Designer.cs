@@ -35,7 +35,7 @@ namespace Flappy_Bird
             this.pipeBottom = new System.Windows.Forms.PictureBox();
             this.flappyBird = new System.Windows.Forms.PictureBox();
             this.ground = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.scoreText = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
@@ -66,9 +66,9 @@ namespace Flappy_Bird
             // flappyBird
             // 
             this.flappyBird.Image = ((System.Drawing.Image)(resources.GetObject("flappyBird.Image")));
-            this.flappyBird.Location = new System.Drawing.Point(89, 167);
+            this.flappyBird.Location = new System.Drawing.Point(21, 89);
             this.flappyBird.Name = "flappyBird";
-            this.flappyBird.Size = new System.Drawing.Size(71, 60);
+            this.flappyBird.Size = new System.Drawing.Size(67, 57);
             this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.flappyBird.TabIndex = 2;
             this.flappyBird.TabStop = false;
@@ -83,17 +83,17 @@ namespace Flappy_Bird
             this.ground.TabIndex = 3;
             this.ground.TabStop = false;
             // 
-            // label1
+            // scoreText
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 49);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Score: 0";
+            this.scoreText.AutoSize = true;
+            this.scoreText.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.scoreText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.scoreText.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreText.Location = new System.Drawing.Point(342, 23);
+            this.scoreText.Name = "scoreText";
+            this.scoreText.Size = new System.Drawing.Size(106, 39);
+            this.scoreText.TabIndex = 4;
+            this.scoreText.Text = "Score: 0";
             // 
             // gameTimer
             // 
@@ -107,11 +107,11 @@ namespace Flappy_Bird
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(491, 546);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.scoreText);
             this.Controls.Add(this.pipeTop);
             this.Controls.Add(this.ground);
-            this.Controls.Add(this.flappyBird);
             this.Controls.Add(this.pipeBottom);
+            this.Controls.Add(this.flappyBird);
             this.Name = "Form1";
             this.Text = "Flappy Bird";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gamekeyisdown);
@@ -131,7 +131,7 @@ namespace Flappy_Bird
         private System.Windows.Forms.PictureBox pipeBottom;
         private System.Windows.Forms.PictureBox flappyBird;
         private System.Windows.Forms.PictureBox ground;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label scoreText;
         private System.Windows.Forms.Timer gameTimer;
     }
 }
