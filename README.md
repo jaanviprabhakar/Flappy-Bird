@@ -1,14 +1,14 @@
 # Flappy-Bird
  Flappy Bird desktop app using C#
 
-## Instructions for Playing:
+### Instructions for Playing:
 1. Press and hold the spacebar to fly.
 2. The speed keeps increasing with time.
 3. If the bird touches the top or the ground or any of the pipes, the game is over.
 4. Game Over! will be seen when the game ends.
 
 
-## Basic operation
+### Basic operation
 1. Start a Project in Windows Forms App (.NET framework )
 2. Design an Outlay on the Designer 
 2. Use Tools from Toolbox
@@ -22,7 +22,7 @@
    * exit function gameEventTimer
    * in gamekeyisdown (spacebar pressed) and gamekeyisup (spacebar )
 
-## How to download the code and play the game
+### How to download the code and play the game
 1. Clone the repository / Go to Code -> Download zip
 2. Extract the folder from the zip file.
 3. Open the code on Visual Studio (windows form)
@@ -46,3 +46,5 @@
 9. Happy Playing!
 
 ![Game](https://user-images.githubusercontent.com/63497370/103635273-48b8ce80-4f6e-11eb-9702-165f9e7602f2.PNG)
+
+ThankYou! :smiley:
